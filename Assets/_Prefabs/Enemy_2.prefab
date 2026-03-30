@@ -263,6 +263,8 @@ MonoBehaviour:
   fireRate: 0.3
   health: 10
   score: 100
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 40
   sinEccentricity: 0.5
   lifeTime: 10
   p0: {x: 0, y: 0, z: 0}

@@ -86,9 +86,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  fireRate: 0.3
+  fireRate: 2
   health: 10
   score: 100
+  projectilePrefab: {fileID: 2253220144628416718, guid: ad27e1d866a79ae42885668e48c7c078, type: 3}
+  projectileSpeed: 40
   waveFrequency: 2
   waveWidth: 4
   waveRotY: 45

@@ -7,8 +7,10 @@ public class Enemy : MonoBehaviour
     [Header("Inscribed")]
     public float speed = 10f; //speed in m/s
     public float fireRate = 0.3f; //seconds/shot;
+    public float nextFireTime = 0f;
     public float health = 10;
     public int score = 100; //points earned for destroying this
+    public float projectileSpeed = 40;
 
     protected BoundsCheck bndCheck;
 
@@ -37,6 +39,7 @@ public class Enemy : MonoBehaviour
         {
                 Destroy(gameObject);
         }
+        
     }
 
     public virtual void Move()
@@ -60,4 +63,6 @@ public class Enemy : MonoBehaviour
             print("Enemy hit by non-ProjectileHero: " + otherGO.name);
         }
     }
+
+    
 }

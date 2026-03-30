@@ -10,9 +10,11 @@ public class Main : MonoBehaviour
     [Header("Inscribed")]
     public GameObject[] prefabEnemies; //array of Enemy prefabs
     public float enemySpawnPerSecond = 0.5f; //num of Enemies/sec
+    public float nextEnemy4SpawnTime = 15f;
     public float enemyDefaultPadding = 1.5f; //padding for position
     private BoundsCheck bndCheck;
     
+    private float enemy4SpawnInterval = 30;
     void Awake()
     {
         S = this;
@@ -28,6 +30,21 @@ public class Main : MonoBehaviour
     {
         //pick a random Enemy prefab to instantiate
         int ndx = Random.Range(0, prefabEnemies.Length);
+
+        
+        //there can only be a specific number of enemy 4s on screen
+        Enemy_4 e4 = prefabEnemies[ndx].GetComponent<Enemy_4>();
+        if (e4 != null)
+        {
+            if (Enemy_4.CurrentShips >= e4.maxShips || Time.time < nextEnemy4SpawnTime)
+            {
+                Invoke("SpawnEnemy", 1f / enemySpawnPerSecond);
+                return;
+            }
+
+            // only set this when an Enemy_4 is actually allowed to spawn
+            nextEnemy4SpawnTime = Time.time + enemy4SpawnInterval;
+        }
 
         GameObject go = Instantiate<GameObject>(prefabEnemies[ndx]);
 

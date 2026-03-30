@@ -6,6 +6,8 @@ public class Enemy_1 : Enemy
 {
     [Header("Inscribed")] 
 
+    public GameObject projectilePrefab;
+
     // # seconds for a full sine wave
     public float waveFrequency = 2;
 
@@ -23,6 +25,16 @@ public class Enemy_1 : Enemy
         x0 = pos.x;
 
         birthTime = Time.time;
+    }
+
+    void Update()
+    {
+        Move();
+
+        if(Time.time >= nextFireTime){
+            TempFire();
+            nextFireTime = Time.time + fireRate;
+        }
     }
 
     //Override the Move function on Enemy
@@ -45,6 +57,16 @@ public class Enemy_1 : Enemy
         base.Move();
 
         //print(bndCheck.isOnScreen);
+        
+    }
+
+    void TempFire()
+    {
+        GameObject projGO = Instantiate<GameObject>(projectilePrefab);
+        projGO.transform.position = transform.position;
+        Rigidbody rigidB = projGO.GetComponent<Rigidbody>();
+        rigidB.velocity = Vector3.down * projectileSpeed;
+        
     }
 }
 
