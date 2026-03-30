@@ -316,7 +316,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b0a369fe206cae40acad9322f3da28d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -511,7 +511,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fe91304d7328f1f4c8fe5a70c2a6a9fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -640,6 +640,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabEnemies:
+  - {fileID: 2740705477521015560, guid: 819d2c7ee7e89ab4e8d8113179e549bf, type: 3}
+  - {fileID: 1932958044425115557, guid: 247705e310ead4e499b0ca0cd3e0b5b3, type: 3}
+  - {fileID: 7517222941584660417, guid: 60484cc0252596746a621b2c3c96000b, type: 3}
+  - {fileID: 204115532489583694, guid: cf3c155b233e3c4478343ac06130dacc, type: 3}
   - {fileID: 3347218343093814892, guid: b5e411e159a27e74bbd88a3612122b04, type: 3}
   enemySpawnPerSecond: 0.5
   nextEnemy4SpawnTime: 10
